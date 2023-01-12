@@ -38,7 +38,10 @@ for autonomous_system in data["AS"]:
                     prot = " ipv6 " + protocole + " area 0\n"
                     myFile.write(ip + ipv6 + prot + "!\n")
             elif(interface["lan"]!=""): #mieux si verifie que c'est un entier
-                ip=" ipv6 address 2001:100:"+AS+":"+interface["lan"]+"::"+nomRouteur+"/64\n"
+                if(routeur["ASBR"]!=['0','0','0','0','0'] and interface["int_name"]==routeur["ASBR"][3]):
+                    ip=routeur["ASBR"][4]
+                else:
+                    ip=" ipv6 address 2001:100:"+AS+":"+interface["lan"]+"::"+nomRouteur+"/64\n"
                 ipv6=" ipv6 enable\n"
                 if(autonomous_system["protocole_routage"] == "rip"):
                     prot=" ipv6 "+protocole+" enable\n"
@@ -62,7 +65,7 @@ for autonomous_system in data["AS"]:
                 myFile.write(" neighbor "+ip+" remote-as "+AS+"\n neighbor "+ip+" update-source Loopback0\n")
 
         #SI ASBR, verifier avec R6 et R7 si ça marche
-        if(routeur["ASBR"]!=['0','0','0']):
+        if(routeur["ASBR"]!=['0','0','0','0','0']):
             myFile.write(" neighbor "+routeur["ASBR"][1]+" remote-as "+(routeur["ASBR"][0])+"\n")
 
         #on active les voisins et on advertise les networks
@@ -73,7 +76,7 @@ for autonomous_system in data["AS"]:
                 myFile.write("  neighbor "+ip+" activate\n")
 
         #SI ASBR verifier avec R6 et R7 si ça marche
-        if(routeur["ASBR"]!=['0','0','0']):
+        if(routeur["ASBR"]!=['0','0','0','0','0']):
             myFile.write("  neighbor "+routeur["ASBR"][1]+" activate\n  network "+routeur["ASBR"][2]+" activate\n"+"  redistribute "+protocole+" \n")
 
         myFile.write(header3.read())
