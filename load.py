@@ -39,7 +39,7 @@ for autonomous_system in data["AS"]:
                     myFile.write(ip + ipv6 + prot + "!\n")
             elif(interface["lan"]!=""): #mieux si verifie que c'est un entier
                 if(routeur["ASBR"]!=['0','0','0','0','0'] and interface["int_name"]==routeur["ASBR"][3]):
-                    ip=routeur["ASBR"][4]
+                    ip= " ipv6 address" + routeur["ASBR"][4] + "\n"
                 else:
                     ip=" ipv6 address 2001:100:"+AS+":"+interface["lan"]+"::"+nomRouteur+"/64\n"
                 ipv6=" ipv6 enable\n"
@@ -82,7 +82,7 @@ for autonomous_system in data["AS"]:
         myFile.write(header3.read())
 
         myFile.write("ipv6 router " + protocole + "\n")
-        if((autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"]!=['0','0','0'])):
+        if (autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"] != ['0', '0', '0']):
             myFile.write(" redistribute connected\n")
 
         if((autonomous_system["protocole_routage"] == "ospf")):
