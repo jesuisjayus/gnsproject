@@ -8,7 +8,7 @@
                  {
                     "nom_routeur":"1",
                     "routeur_id":"1.1.1.1",
-                    "ASBR":["0","0","0"], 
+                    "ASBR":["0","0","0","0","0"], 
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -39,7 +39,7 @@
                 {
                     "nom_routeur":"2",
                     "routeur_id":"2.2.2.2",
-                    "ASBR":["0","0","0"], 
+                    "ASBR":["0","0","0","0","0"], 
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -70,7 +70,7 @@
                 {
                     "nom_routeur":"3",
                     "routeur_id":"3.3.3.3",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -101,7 +101,7 @@
                 {
                     "nom_routeur":"4",
                     "routeur_id":"4.4.4.4",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -132,7 +132,7 @@
                 {
                     "nom_routeur":"5",
                     "routeur_id":"5.5.5.5",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -163,7 +163,7 @@
                 {
                     "nom_routeur":"6",
                     "routeur_id":"6.6.6.6",
-                    "ASBR":["102","2001:100:102:11::13","2001:100:102::/64"],
+                    "ASBR":["102","2001:100:103:11::13","2001:100:102::/64","GigabitEthernet3/0","2001:100:103:11::6"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -194,7 +194,7 @@
                 {
                     "nom_routeur":"7",
                     "routeur_id":"7.7.7.7",
-                    "ASBR":["102","2001:100:102:12::14","2001:100:102::/64"],
+                    "ASBR":["102","2001:100:103:12::14","2001:100:102::/64","GigabitEthernet3/0","2001:100:103:12::7"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -232,7 +232,7 @@
                  {
                     "nom_routeur":"8",
                     "routeur_id":"8.8.8.8",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -263,7 +263,7 @@
                 {
                     "nom_routeur":"9",
                     "routeur_id":"9.9.9.9",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -294,7 +294,7 @@
                 {
                     "nom_routeur":"10",
                     "routeur_id":"10.10.10.10",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -325,7 +325,7 @@
                 {
                     "nom_routeur":"11",
                     "routeur_id":"11.11.11.11",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -356,7 +356,7 @@
                 {
                     "nom_routeur":"12",
                     "routeur_id":"12.12.12.12",
-                    "ASBR":["0","0","0"],
+                    "ASBR":["0","0","0","0","0"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -387,7 +387,7 @@
                 {
                     "nom_routeur":"13",
                     "routeur_id":"13.13.13.13",
-                    "ASBR":["101","2001:100:101:11::6","2001:100:101::/64"],
+                    "ASBR":["101","2001:100:103:11::6","2001:100:101::/64","GigabitEthernet3/0","2001:100:103:11::13"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
@@ -418,7 +418,7 @@
                 {
                     "nom_routeur":"14",
                     "routeur_id":"14.14.14.14",
-                    "ASBR":["101","2001:100:101:12::7","2001:100:101::/64"],
+                    "ASBR":["101","2001:100:103:12::7","2001:100:101::/64","GigabitEthernet3/0","2001:100:103:12::14"],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
