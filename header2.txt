@@ -1,0 +1,16 @@
+boot-start-marker
+boot-end-marker
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ip cef
+!
+no ip domain lookup
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+ip tcp synwait-time 5
+! 
