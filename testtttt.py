@@ -2,8 +2,8 @@ import os
 import shutil
 
 préCheminCréé = os.getcwd() #a éxécuter là où on crée nos fichiers config/on exécute le load.py
-préCheminRempl = "/mnt/c/Users/nicol/OneDrive/Bureau/INSA 3A/GNS3/project-files" #path project files du projet gns3
-a=int(input("cm de routeurs ?"))
+préCheminRempl = "/mnt/c/users/aurel/GNS3/projects/Projet GNS3 auto/project-files" #path project files du projet gns3
+a=int(input("Combien de routeurs ? "))
 
 def find_file(préChemin, fichier):
     for root, dirs, files in os.walk(préChemin):
