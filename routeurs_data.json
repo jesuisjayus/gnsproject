@@ -8,217 +8,301 @@
                  {
                     "nom_routeur":"1",
                     "routeur_id":"1.1.1.1",
-                    "ASBR":["0","0","0","0","0"], 
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
+
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"1"
+                            "plage_ip":"2001:100:101:1::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"2"
+                            "plage_ip":"2001:100:101:2::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         }
                     ]                        
                 },
                 {
                     "nom_routeur":"2",
                     "routeur_id":"2.2.2.2",
-                    "ASBR":["0","0","0","0","0"], 
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"1"
+                            "plage_ip":"2001:100:101:1::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"4"
+                            "plage_ip":"2001:100:101:4::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"3"
+                            "plage_ip":"2001:100:101:3::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         }
                     ]    
                 },
                 {
                     "nom_routeur":"3",
                     "routeur_id":"3.3.3.3",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"5"
+                            "plage_ip":"2001:100:101:5::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"2"
+                            "plage_ip":"2001:100:101:2::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"3"
+                            "plage_ip":"2001:100:101:3::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"4",
                     "routeur_id":"4.4.4.4",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"9"
+                            "plage_ip":"2001:100:101:9::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"4"
+                            "plage_ip":"2001:100:101:4::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"6"
+                            "plage_ip":"2001:100:101:6::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"7"
+                            "plage_ip":"2001:100:101:7::",
+                            "masque": "/64"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"5",
                     "routeur_id":"5.5.5.5",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"5"
+                            "plage_ip":"2001:100:101:5::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"10"
+                            "plage_ip":"2001:100:101:10::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"6"
+                            "plage_ip":"2001:100:101:6::",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"8"
+                            "plage_ip":"2001:100:101:8::",
+                            "masque": "/64"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"6",
                     "routeur_id":"6.6.6.6",
-                    "ASBR":["102","2001:100:103:11::13","2001:100:102::/64","GigabitEthernet3/0","2001:100:103:11::6"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": "102",
+                            "neighbor_address":"2001:100:103:11::13",
+                            "network_advertisement":"2001:100:102::/64",
+                            "interface":"GigabitEthernet3/0"
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
+
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"9"
+                            "plage_ip":"2001:100:101:9::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"11"
+                            "plage_ip":"2001:100:101:11::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"8"
+                            "plage_ip":"2001:100:101:8::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"7",
                     "routeur_id":"7.7.7.7",
-                    "ASBR":["102","2001:100:103:12::14","2001:100:102::/64","GigabitEthernet3/0","2001:100:103:12::7"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": "102",
+                            "neighbor_address":"2001:100:103:12::14",
+                            "network_advertisement":"2001:100:102::/64",
+                            "interface":"GigabitEthernet3/0"
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:101:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": ""
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"10"
+                            "plage_ip":"2001:100:101:10::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"12"
+                            "plage_ip":"2001:100:101:12::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"7"
+                            "plage_ip":"2001:100:101:7::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ]
                 }
@@ -232,217 +316,328 @@
                  {
                     "nom_routeur":"8",
                     "routeur_id":"8.8.8.8",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as":""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"1"
+                            "plage_ip":"2001:100:101:1::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"2"
+                            "plage_ip":"2001:100:101:2::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         }
                     ]                        
                 },
                 {
                     "nom_routeur":"9",
                     "routeur_id":"9.9.9.9",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"1"
+                            "plage_ip":"2001:100:101:1::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"4"
+                            "plage_ip":"2001:100:101:4::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"3"
+                            "plage_ip":"2001:100:101:3::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         }
                     ]    
                 },
                 {
                     "nom_routeur":"10",
                     "routeur_id":"10.10.10.10",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"5"
+                            "plage_ip":"2001:100:101:5::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"2"
+                            "plage_ip":"2001:100:101:2::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"3"
+                            "plage_ip":"2001:100:101:3::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"11",
                     "routeur_id":"11.11.11.11",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"9"
+                            "plage_ip":"2001:100:101:9::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"4"
+                            "plage_ip":"2001:100:101:4::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"6"
+                            "plage_ip":"2001:100:101:6::",
+                            "masque": "/64"
+                            ,"cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"7"
+                            "plage_ip":"2001:100:101:7::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"12",
                     "routeur_id":"12.12.12.12",
-                    "ASBR":["0","0","0","0","0"],
+                    "ASBR":[
+                        {
+                            "neighbor_as":""
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"5"
+                            "plage_ip":"2001:100:101:5::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"10"
+                            "plage_ip":"2001:100:101:10::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"6"
+                            "plage_ip":"2001:100:101:6::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"8"
+                            "plage_ip":"2001:100:101:8::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"13",
                     "routeur_id":"13.13.13.13",
-                    "ASBR":["101","2001:100:103:11::6","2001:100:101::/64","GigabitEthernet3/0","2001:100:103:11::13"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": "101",
+                            "neighbor_address":"2001:100:103:11::6",
+                            "network_advertisement":"2001:100:101::/64",
+                            "interface":"GigabitEthernet3/0"
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":"9"
+                            "plage_ip":"2001:100:101:9::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"11"
+                            "plage_ip":"2001:100:101:11::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"8"
+                            "plage_ip":"2001:100:101:8::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ] 
                 },
                 {
                     "nom_routeur":"14",
                     "routeur_id":"14.14.14.14",
-                    "ASBR":["101","2001:100:103:12::7","2001:100:101::/64","GigabitEthernet3/0","2001:100:103:12::14"],
+                    "ASBR":[
+                        {
+                            "neighbor_as": "101",
+                            "neighbor_address":"2001:100:103:12::7",
+                            "network_advertisement":"2001:100:101::/64",
+                            "interface":"GigabitEthernet3/0"
+                        }
+                    ],
                     "interfaces":[
                         {
                             "int_name":"Loopback0",
-                            "lan":""
+                            "plage_ip":"2001:100:102:A",
+                            "masque": "/64"
                         },
                         {
                             "int_name":"FastEthernet0/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "lan":""
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "lan":"10"
+                            "plage_ip":"2001:100:101:10::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "lan":"12"
+                            "plage_ip":"2001:100:101:12::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "lan":"7"
+                            "plage_ip":"2001:100:101:7::",
+                            "masque": "/64",
+                            "cost":"default"
                         }
                     ]
                 }

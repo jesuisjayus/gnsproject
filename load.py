@@ -29,26 +29,27 @@ for autonomous_system in data["AS"]:
             negAuto = " negotiation auto\n"
             myFile.write(nom+noIP)
             if(interface["int_name"]=="Loopback0"):
-                ip=" ipv6 address 2001:100:"+AS+":A"+nomRouteur+"::"+nomRouteur+"/64\n"
+                ip=" ipv6 address "+interface["plage_ip"]+nomRouteur+"::"+nomRouteur+interface["masque"]+"\n"
                 ipv6=" ipv6 enable\n"
-                if(autonomous_system["protocole_routage"] == "rip"):
+                if autonomous_system["protocole_routage"] == "rip":
                     prot=" ipv6 "+protocole+" enable\n"
                     myFile.write(ip+ipv6+prot+"!\n")
                 elif(autonomous_system["protocole_routage"] == "ospf"):
                     prot = " ipv6 " + protocole + " area 0\n"
                     myFile.write(ip + ipv6 + prot + "!\n")
-            elif(interface["lan"]!=""): #mieux si verifie que c'est un entier
-                if(routeur["ASBR"]!=['0','0','0','0','0'] and interface["int_name"]==routeur["ASBR"][3]):
-                    ip= " ipv6 address " + routeur["ASBR"][4] + "/64\n"
-                else:
-                    ip=" ipv6 address 2001:100:"+AS+":"+interface["lan"]+"::"+nomRouteur+"/64\n"
+            elif(interface["plage_ip"]!=""):
+                ip=" ipv6 address "+interface["plage_ip"]+nomRouteur+interface["masque"]+"\n"
                 ipv6=" ipv6 enable\n"
                 if(autonomous_system["protocole_routage"] == "rip"):
                     prot=" ipv6 "+protocole+" enable\n"
                     myFile.write(negAuto+ip+ipv6+prot+"!\n")
                 elif(autonomous_system["protocole_routage"] == "ospf"):
                     prot = " ipv6 " + protocole + " area 0\n"
-                    myFile.write(negAuto+ip + ipv6 + prot + "!\n")
+                    if(interface["cost"] != "") | (interface["int_name"] != "Loopback0")| (interface["cost"] != "default") :
+                        cost = " ipv6 ospf cost "+interface["cost"]+"\n" # A voir si faut mettre sur l'interface ospf des asbr
+                        myFile.write(negAuto+ip + ipv6 + prot + cost+"!\n")
+                    else:
+                        myFile.write(negAuto + ip + ipv6 + prot + "!\n")
             else:
                 if(interface["int_name"]=="FastEthernet0/0"):
                     myFile.write(" shutdown\n duplex full\n!\n")
@@ -64,20 +65,20 @@ for autonomous_system in data["AS"]:
                 ip="2001:100:"+AS+":A"+i["nom_routeur"]+"::"+i["nom_routeur"]
                 myFile.write(" neighbor "+ip+" remote-as "+AS+"\n neighbor "+ip+" update-source Loopback0\n")
 
-        #SI ASBR, verifier avec R6 et R7 si ça marche
-        if(routeur["ASBR"]!=['0','0','0','0','0']):
-            myFile.write(" neighbor "+routeur["ASBR"][1]+" remote-as "+(routeur["ASBR"][0])+"\n")
+        #SI ASBR
+        if(routeur["ASBR"][0]["neighbor_as"]!=""):
+            myFile.write(" neighbor "+routeur["ASBR"][0]["neighbor_address"]+" remote-as "+(routeur["ASBR"][0]["neighbor_as"])+"\n")
 
         #on active les voisins et on advertise les networks
         myFile.write(" !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n")
         for i in autonomous_system["routeur"]:
             if(i["nom_routeur"]!=nomRouteur):
-                ip="2001:100:"+AS+":A"+i["nom_routeur"]+"::"+i["nom_routeur"]
+                ip=i["interfaces"][0]["plage_ip"]+i["nom_routeur"]+"::"+i["nom_routeur"]
                 myFile.write("  neighbor "+ip+" activate\n")
 
         #SI ASBR verifier avec R6 et R7 si ça marche
-        if(routeur["ASBR"]!=['0','0','0','0','0']):
-            myFile.write("  neighbor "+routeur["ASBR"][1]+" activate\n  network "+routeur["ASBR"][2]+"\n"+"  redistribute "+protocole+" \n")
+        if(routeur["ASBR"][0]["neighbor_as"]!=""):
+            myFile.write("  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n  network "+routeur["ASBR"][0]["network_advertisement"]+"\n"+"  redistribute "+protocole+" \n")
 
         myFile.write(header3.read())
 
@@ -86,7 +87,7 @@ for autonomous_system in data["AS"]:
         if ((autonomous_system["protocole_routage"] == "ospf")):
             myFile.write(" router-id " + routeur["routeur_id"] + "\n")
 
-        if (autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"] != ['0', '0', '0']):
+        if (autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"][0]["neighbor_as"] != ""):
             myFile.write(" redistribute connected\n")
 
         myFile.write(header4.read())
