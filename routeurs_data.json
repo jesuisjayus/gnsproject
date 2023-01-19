@@ -218,7 +218,7 @@
                         {
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:11::13",
-                            "network_advertisement":"2001:100:102::/64",
+                            "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -266,7 +266,7 @@
                         {
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:12::14",
-                            "network_advertisement":"2001:100:102::/64",
+                            "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -550,7 +550,7 @@
                         {
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:11::6",
-                            "network_advertisement":"2001:100:101::/64",
+                            "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -599,7 +599,7 @@
                         {
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:12::7",
-                            "network_advertisement":"2001:100:101::/64",
+                            "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],

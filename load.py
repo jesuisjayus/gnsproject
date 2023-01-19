@@ -73,12 +73,20 @@ for autonomous_system in data["AS"]:
         myFile.write(" !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n")
         for i in autonomous_system["routeur"]:
             if(i["nom_routeur"]!=nomRouteur):
-                ip=i["interfaces"][0]["plage_ip"]+i["nom_routeur"]+"::"+i["nom_routeur"]
+                for interface in i["interfaces"]:
+                    if(interface["int_name"]=="Loopback0"):
+                        ip=interface["plage_ip"]+i["nom_routeur"]+"::"+i["nom_routeur"]
                 myFile.write("  neighbor "+ip+" activate\n")
 
         #SI ASBR verifier avec R6 et R7 si ça marche
         if(routeur["ASBR"][0]["neighbor_as"]!=""):
-            myFile.write("  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n  network "+routeur["ASBR"][0]["network_advertisement"]+"\n"+"  redistribute "+protocole+" \n")
+            neighbor = "  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n"
+            myFile.write(neighbor)
+            for i in range(0,len(routeur["ASBR"][0]["network_advertisement"])):
+                network = "  network "+routeur["ASBR"][0]["network_advertisement"][i]+"\n"
+                myFile.write(network)
+            redistribute = "  redistribute "+protocole+" \n"
+            myFile.write(redistribute)
 
         myFile.write(header3.read())
 
