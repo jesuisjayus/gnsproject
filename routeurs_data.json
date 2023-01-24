@@ -219,7 +219,32 @@
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:11::13",
                             "network_advertisement":["2001:100:101::/64"],
-                            "interface":"GigabitEthernet3/0"
+                            "interface":"GigabitEthernet3/0",
+                            "route_map": [
+                                {
+                                    "name": "rmap",
+                                    "number":"10",
+                                    "access_list":"acli"
+                                },{
+                                     "name": "rmap",
+                                     "number":"20",
+                                     "access_list":""
+                                }
+                            ],
+                            "acces_list":[
+                                {
+                                    "name":"",
+                                    "sources":["2001:100:102:A8::/64"],
+                                    "destinations":["any"]
+                                }
+                            ],
+                            "filtering": [
+                                {
+                                    "direction":"in",
+                                    "neighbor":"2001:100:103:11::13",
+                                    "route_map":"rmap",
+                                }
+                            ]
                         }
                     ],
                     "interfaces":[
@@ -267,7 +292,8 @@
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:12::14",
                             "network_advertisement":["2001:100:101::/64"],
-                            "interface":"GigabitEthernet3/0"
+                            "interface":"GigabitEthernet3/0",
+                            "filtering":[""]
                         }
                     ],
                     "interfaces":[
@@ -551,7 +577,8 @@
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:11::6",
                             "network_advertisement":["2001:100:102::/64"],
-                            "interface":"GigabitEthernet3/0"
+                            "interface":"GigabitEthernet3/0",
+                            "filtering":[""]
                         }
                     ],
                     "interfaces":[
@@ -600,7 +627,8 @@
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:12::7",
                             "network_advertisement":["2001:100:102::/64"],
-                            "interface":"GigabitEthernet3/0"
+                            "interface":"GigabitEthernet3/0",
+                            "filtering":[""]
                         }
                     ],
                     "interfaces":[

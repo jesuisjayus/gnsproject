@@ -82,6 +82,10 @@ for autonomous_system in data["AS"]:
         if(routeur["ASBR"][0]["neighbor_as"]!=""):
             neighbor = "  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n"
             myFile.write(neighbor)
+            if (routeur["ASBR"][0]["filtering"][0] != ""):
+                for rule in routeur["ASBR"][0]["filtering"]:
+                    myFile.write("  neighbor " + rule["neighbor"] + " route-map " + rule["route_map"] + " " + rule[
+                        "direction"] + "\n")
             for i in range(0,len(routeur["ASBR"][0]["network_advertisement"])):
                 network = "  network "+routeur["ASBR"][0]["network_advertisement"][i]+"\n"
                 myFile.write(network)
@@ -96,8 +100,10 @@ for autonomous_system in data["AS"]:
             myFile.write(" router-id " + routeur["routeur_id"] + "\n")
 
         if (autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"][0]["neighbor_as"] != ""):
-            myFile.write(" redistribute connected\n")
+            myFile.write(" redistribute connected\n!\n")
 
+        if (routeur["ASBR"][0]["neighbor_as"] != ""):
+            for rule in routeur["ASBR"][0]["route_map"]:
         myFile.write(header4.read())
 
         myFile.close()
