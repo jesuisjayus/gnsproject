@@ -218,7 +218,7 @@
                         {
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:11::13",
-                            "network_advertisement":["2001:100:102::/64"],
+                            "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -247,7 +247,7 @@
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:11::",
+                            "plage_ip":"2001:100:103:11::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -266,7 +266,7 @@
                         {
                             "neighbor_as": "102",
                             "neighbor_address":"2001:100:103:12::14",
-                            "network_advertisement":["2001:100:102::/64"],
+                            "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -294,7 +294,7 @@
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:12::",
+                            "plage_ip":"2001:100:103:12::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -335,13 +335,13 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:1::",
+                            "plage_ip":"2001:100:102:1::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:2::",
+                            "plage_ip":"2001:100:102:2::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -381,19 +381,19 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:1::",
+                            "plage_ip":"2001:100:102:1::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:4::",
+                            "plage_ip":"2001:100:102:4::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:3::",
+                            "plage_ip":"2001:100:102:3::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -427,19 +427,19 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:5::",
+                            "plage_ip":"2001:100:102:5::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:2::",
+                            "plage_ip":"2001:100:102:2::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:3::",
+                            "plage_ip":"2001:100:102:3::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -473,25 +473,25 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:9::",
+                            "plage_ip":"2001:100:102:9::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:4::",
+                            "plage_ip":"2001:100:102:4::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:6::",
+                            "plage_ip":"2001:100:102:6::",
                             "masque": "/64"
                             ,"cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "plage_ip":"2001:100:101:7::",
+                            "plage_ip":"2001:100:102:7::",
                             "masque": "/64",
                             "cost":"default"
                         }
@@ -519,25 +519,25 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:5::",
+                            "plage_ip":"2001:100:102:5::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:10::",
+                            "plage_ip":"2001:100:102:10::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:6::",
+                            "plage_ip":"2001:100:102:6::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "plage_ip":"2001:100:101:8::",
+                            "plage_ip":"2001:100:102:8::",
                             "masque": "/64",
                             "cost":"default"
                         }
@@ -550,7 +550,7 @@
                         {
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:11::6",
-                            "network_advertisement":["2001:100:101::/64"],
+                            "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -568,7 +568,7 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"2001:100:101:9::",
+                            "plage_ip":"2001:100:102:9::",
                             "masque": "/64",
                             "cost":"default"
                         },
@@ -580,13 +580,13 @@
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:11::",
+                            "plage_ip":"2001:100:103:11::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "plage_ip":"2001:100:101:8::",
+                            "plage_ip":"2001:100:102:8::",
                             "masque": "/64",
                             "cost":"default"
                         }
@@ -599,7 +599,7 @@
                         {
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:12::7",
-                            "network_advertisement":["2001:100:101::/64"],
+                            "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0"
                         }
                     ],
@@ -623,19 +623,19 @@
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"2001:100:101:10::",
+                            "plage_ip":"2001:100:102:10::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
-                            "plage_ip":"2001:100:101:12::",
+                            "plage_ip":"2001:100:103:12::",
                             "masque": "/64",
                             "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
-                            "plage_ip":"2001:100:101:7::",
+                            "plage_ip":"2001:100:102:7::",
                             "masque": "/64",
                             "cost":"default"
                         }
