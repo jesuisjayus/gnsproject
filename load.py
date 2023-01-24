@@ -103,7 +103,19 @@ for autonomous_system in data["AS"]:
             myFile.write(" redistribute connected\n!\n")
 
         if (routeur["ASBR"][0]["neighbor_as"] != ""):
-            for rule in routeur["ASBR"][0]["route_map"]:
+            if(routeur["ASBR"][0]["route_map"][0]!=""):
+                for rule in routeur["ASBR"][0]["route_map"]:
+                    if(rule["access_list"]!=""):
+                        myFile.write("route-map "+rule["name"]+" deny "+rule["number"]+"\n")
+                        myFile.write(" match ipv6 address "+rule["access_list"]+"\n!\n")
+                    else:
+                        myFile.write("route-map "+rule["name"]+" permit "+rule["number"]+"\n!\n")
+            if(routeur["ASBR"][0]["access_list"]!=""):
+                for list in routeur["ASBR"][0]["access_list"]:
+                    print(list["name"])
+                    #myFile.write("ipv6 access-list "+list["name"][0])
+                    for source in list["sources"]:
+                        myFile.write(" permit ipv6 "+source+" any\n") #a voir comment on pourrait boucler aussi dans les destination, avec un comptzeur qui suit le nombre d'addresse ?
         myFile.write(header4.read())
 
         myFile.close()

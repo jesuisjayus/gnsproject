@@ -231,9 +231,9 @@
                                      "access_list":""
                                 }
                             ],
-                            "acces_list":[
+                            "access_list":[
                                 {
-                                    "name":"",
+                                    "name":"acli",
                                     "sources":["2001:100:102:A8::/64"],
                                     "destinations":["any"]
                                 }
@@ -242,7 +242,7 @@
                                 {
                                     "direction":"in",
                                     "neighbor":"2001:100:103:11::13",
-                                    "route_map":"rmap",
+                                    "route_map":"rmap"
                                 }
                             ]
                         }
@@ -293,6 +293,8 @@
                             "neighbor_address":"2001:100:103:12::14",
                             "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0",
+                            "route_map":[""],
+                            "access_list":[""],
                             "filtering":[""]
                         }
                     ],
@@ -578,6 +580,8 @@
                             "neighbor_address":"2001:100:103:11::6",
                             "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0",
+                            "route_map":[""],
+                            "access_list":[""],
                             "filtering":[""]
                         }
                     ],
@@ -628,6 +632,8 @@
                             "neighbor_address":"2001:100:103:12::7",
                             "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0",
+                            "route_map":[""],
+                            "access_list":[""],
                             "filtering":[""]
                         }
                     ],
