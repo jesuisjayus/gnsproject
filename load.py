@@ -82,10 +82,6 @@ for autonomous_system in data["AS"]:
         if(routeur["ASBR"][0]["neighbor_as"]!=""):
             neighbor = "  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n"
             myFile.write(neighbor)
-            if (routeur["ASBR"][0]["filtering"][0] != ""):
-                for rule in routeur["ASBR"][0]["filtering"]:
-                    myFile.write("  neighbor " + rule["neighbor"] + " route-map " + rule["route_map"] + " " + rule[
-                        "direction"] + "\n")
             for i in range(0,len(routeur["ASBR"][0]["network_advertisement"])):
                 network = "  network "+routeur["ASBR"][0]["network_advertisement"][i]+"\n"
                 myFile.write(network)
@@ -102,20 +98,6 @@ for autonomous_system in data["AS"]:
         if (autonomous_system["protocole_routage"] == "rip") | (routeur["ASBR"][0]["neighbor_as"] != ""):
             myFile.write(" redistribute connected\n!\n")
 
-        if (routeur["ASBR"][0]["neighbor_as"] != ""):
-            if(routeur["ASBR"][0]["route_map"][0]!=""):
-                for rule in routeur["ASBR"][0]["route_map"]:
-                    if(rule["access_list"]!=""):
-                        myFile.write("route-map "+rule["name"]+" deny "+rule["number"]+"\n")
-                        myFile.write(" match ipv6 address "+rule["access_list"]+"\n!\n")
-                    else:
-                        myFile.write("route-map "+rule["name"]+" permit "+rule["number"]+"\n!\n")
-            if(routeur["ASBR"][0]["access_list"]!=""):
-                for list in routeur["ASBR"][0]["access_list"]:
-                    print(list["name"])
-                    #myFile.write("ipv6 access-list "+list["name"][0])
-                    for source in list["sources"]:
-                        myFile.write(" permit ipv6 "+source+" any\n") #a voir comment on pourrait boucler aussi dans les destination, avec un comptzeur qui suit le nombre d'addresse ?
         myFile.write(header4.read())
 
         myFile.close()
