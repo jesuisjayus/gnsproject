@@ -45,7 +45,7 @@
                             "plage_ip":"",
                             "masque": ""
                         }
-                    ]                        
+                    ]
                 },
                 {
                     "nom_routeur":"2",
@@ -86,7 +86,7 @@
                             "plage_ip":"",
                             "masque": ""
                         }
-                    ]    
+                    ]
                 },
                 {
                     "nom_routeur":"3",
@@ -127,7 +127,7 @@
                             "plage_ip":"",
                             "masque": ""
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"4",
@@ -168,7 +168,7 @@
                             "plage_ip":"2001:100:101:7::",
                             "masque": "/64"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"5",
@@ -209,7 +209,7 @@
                             "plage_ip":"2001:100:101:8::",
                             "masque": "/64"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"6",
@@ -220,31 +220,10 @@
                             "neighbor_address":"2001:100:103:11::13",
                             "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0",
-                            "route_map": [
-                                {
-                                    "name": "rmap",
-                                    "number":"10",
-                                    "access_list":"acli"
-                                },{
-                                     "name": "rmap",
-                                     "number":"20",
-                                     "access_list":""
-                                }
-                            ],
-                            "access_list":[
-                                {
-                                    "name":"acli",
-                                    "sources":["2001:100:102:A8::/64"],
-                                    "destinations":["any"]
-                                }
-                            ],
-                            "filtering": [
-                                {
-                                    "direction":"in",
-                                    "neighbor":"2001:100:103:11::13",
-                                    "route_map":"rmap"
-                                }
-                            ]
+                            "type": "peer",
+                            "route_map_name": "outbound",
+                            "route_map_sequence": "10",
+                            "community": "42"
                         }
                     ],
                     "interfaces":[
@@ -268,7 +247,8 @@
                         {
                             "int_name":"GigabitEthernet2/0",
                             "plage_ip":"",
-                            "masque": ""
+                            "masque": "",
+                            "cost": ""
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
@@ -282,7 +262,7 @@
                             "masque": "/64",
                             "cost":"default"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"7",
@@ -293,9 +273,11 @@
                             "neighbor_address":"2001:100:103:12::14",
                             "network_advertisement":["2001:100:101::/64"],
                             "interface":"GigabitEthernet3/0",
-                            "route_map":[""],
-                            "access_list":[""],
-                            "filtering":[""]
+                            "type": "peer",
+                            "route_map_name": "outbound",
+                            "route_map_sequence": "10",
+                            "community": "42"
+
                         }
                     ],
                     "interfaces":[
@@ -312,7 +294,9 @@
                         {
                             "int_name":"GigabitEthernet1/0",
                             "plage_ip":"",
-                            "masque": ""
+                            "masque": "",
+                            "cost": ""
+
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
@@ -341,7 +325,7 @@
             "protocole_routage":"ospf",
             "nom_protocole":"321",
             "routeur":[
-                 {
+                {
                     "nom_routeur":"8",
                     "routeur_id":"8.8.8.8",
                     "ASBR":[
@@ -385,7 +369,7 @@
                             "masque": "",
                             "cost":""
                         }
-                    ]                        
+                    ]
                 },
                 {
                     "nom_routeur":"9",
@@ -431,7 +415,7 @@
                             "masque": "",
                             "cost":""
                         }
-                    ]    
+                    ]
                 },
                 {
                     "nom_routeur":"10",
@@ -477,7 +461,7 @@
                             "masque": "",
                             "cost":""
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"11",
@@ -523,7 +507,7 @@
                             "masque": "/64",
                             "cost":"default"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"12",
@@ -569,7 +553,7 @@
                             "masque": "/64",
                             "cost":"default"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"13",
@@ -579,7 +563,21 @@
                             "neighbor_as": "101",
                             "neighbor_address":"2001:100:103:11::6",
                             "network_advertisement":["2001:100:102::/64"],
-                            "interface":"GigabitEthernet3/0"
+                            "interface":"GigabitEthernet3/0",
+                            "type": "peer",
+                            "route_map_name": "outbound",
+                            "route_map_sequence": "10",
+                            "community": "42"
+                        },
+                        {
+                            "neighbor_as": "104",
+                            "neighbor_address": "2001:100:103:13::15",
+                            "network_advertisement": ["2001:100:101::/64"],
+                            "interface": "GigabitEthernet2/0",
+                            "type": "provider",
+                            "route_map_name": "outbound",
+                            "route_map_sequence": "10",
+                            "community": "42"
                         }
                     ],
                     "interfaces":[
@@ -602,9 +600,9 @@
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
-                            "plage_ip":"",
-                            "masque": "",
-                            "cost":""
+                            "plage_ip":"2001:100:103:13::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
@@ -618,7 +616,7 @@
                             "masque": "/64",
                             "cost":"default"
                         }
-                    ] 
+                    ]
                 },
                 {
                     "nom_routeur":"14",
@@ -629,9 +627,23 @@
                             "neighbor_address":"2001:100:103:12::7",
                             "network_advertisement":["2001:100:102::/64"],
                             "interface":"GigabitEthernet3/0",
-                            "route_map":[""],
-                            "access_list":[""],
-                            "filtering":[""]
+                            "type": "peer",
+                            "route_map_name": "outbound",
+                            "route_map_sequence": "10",
+                            "community": "42"
+                        },
+                        {
+                            "neighbor_as": "105",
+                            "neighbor_address": "2001:100:103:14::16",
+                            "network_advertisement": ["2001:100:101::/64"],
+                            "interface": "GigabitEthernet1/0",
+                            "type": "customer",
+                            "route_map_name": "setcommunity",
+                            "route_map_sequence": "8",
+                            "community": "42",
+                            "access_list_name": "acli",
+                            "prefix_to_match": "2001:100:105::/64"
+
                         }
                     ],
                     "interfaces":[
@@ -648,9 +660,9 @@
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
-                            "plage_ip":"",
-                            "masque": "",
-                            "cost":""
+                            "plage_ip":"2001:100:103:14::",
+                            "masque": "/64",
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
@@ -673,7 +685,198 @@
                     ]
                 }
                     ]
-            
+
+        },
+        {
+            "AS_id":"104",
+            "protocole_routage":"ospf",
+            "nom_protocole":"654",
+            "routeur":[
+                 {
+                    "nom_routeur":"15",
+                    "routeur_id":"15.15.15.15",
+                    "ASBR":[
+                        {
+                            "neighbor_as": "102",
+                            "neighbor_address":"2001:100:103:13::13",
+                            "network_advertisement":["2001:100:104::/64"],
+                            "interface":"GigabitEthernet2/0",
+                            "route_map": [
+                                {
+                                    "name": "rmap",
+                                    "number":"10",
+                                    "access_list":"acli"
+                                },{
+                                     "name": "rmap",
+                                     "number":"20",
+                                     "access_list":""
+                                }
+                            ],
+                            "access_list":[
+                                {
+                                    "name":"acli",
+                                    "sources":["2001:100:102:A8::/64"],
+                                    "destinations":["any"]
+                                }
+                            ],
+                            "filtering": [
+                                {
+                                    "direction":"in",
+                                    "neighbor":"2001:100:103:11::13",
+                                    "route_map":"rmap"
+                                }
+                            ]
+                        }
+                    ],
+                    "interfaces":[
+                        {
+                            "int_name":"Loopback0",
+                            "plage_ip":"2001:100:104:A",
+                            "masque": "/64"
+
+                        },
+                        {
+                            "int_name":"FastEthernet0/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet1/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet2/0",
+                            "plage_ip":"2001:100:103:13::",
+                            "masque": "/64",
+                            "cost": "default"
+                        },
+                        {
+                            "int_name":"GigabitEthernet3/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet4/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        }
+                    ]
+                }
+                      ]
+        },
+        {
+            "AS_id":"105",
+            "protocole_routage":"ospf",
+            "nom_protocole":"987",
+            "routeur":[
+                 {
+                    "nom_routeur":"16",
+                    "routeur_id":"16.16.16.16",
+                    "ASBR":[
+                        {
+                            "neighbor_as": "102",
+                            "neighbor_address":"2001:100:103:14::14",
+                            "network_advertisement":["2001:100:105::/64"],
+                            "interface":"GigabitEthernet1/0"
+                        }
+                    ],
+                    "interfaces":[
+                        {
+                            "int_name":"Loopback0",
+                            "plage_ip":"2001:100:105:A",
+                            "masque": "/64"
+
+                        },
+                        {
+                            "int_name":"FastEthernet0/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet1/0",
+                            "plage_ip":"2001:100:103:14::",
+                            "masque": "/64",
+                            "cost": "default"
+
+                        },
+                        {
+                            "int_name":"GigabitEthernet2/0",
+                            "plage_ip":"2001:100:105:1::",
+                            "masque": "/64",
+                            "cost": "default"
+                        },
+                        {
+                            "int_name":"GigabitEthernet3/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet4/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        }
+                    ]
+                },
+                        {
+                    "nom_routeur":"17",
+                    "routeur_id":"17.17.17.17",
+                    "ASBR":[
+                        {
+                            "neighbor_as": ""
+                        }
+                    ],
+                    "interfaces":[
+                        {
+                            "int_name":"Loopback0",
+                            "plage_ip":"2001:100:105:A",
+                            "masque": "/64"
+
+                        },
+                        {
+                            "int_name":"FastEthernet0/0",
+                            "plage_ip":"",
+                            "masque": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet1/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+
+                        },
+                        {
+                            "int_name":"GigabitEthernet2/0",
+                            "plage_ip":"2001:100:105:1::",
+                            "masque": "/64",
+                            "cost": "default"
+                        },
+                        {
+                            "int_name":"GigabitEthernet3/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        },
+                        {
+                            "int_name":"GigabitEthernet4/0",
+                            "plage_ip":"",
+                            "masque": "",
+                            "cost": ""
+                        }
+                    ]
+                }
+                      ]
         }
+
+
+
+
     ]
 }

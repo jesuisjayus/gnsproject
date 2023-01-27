@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-with open("routeurs_data.json") as file:
+with open("routeurs-data2.json") as file:
     data = json.load(file)
 
 
@@ -67,7 +67,8 @@ for autonomous_system in data["AS"]:
 
         #SI ASBR
         if(routeur["ASBR"][0]["neighbor_as"]!=""):
-            myFile.write(" neighbor "+routeur["ASBR"][0]["neighbor_address"]+" remote-as "+(routeur["ASBR"][0]["neighbor_as"])+"\n")
+            for neighbor in routeur["ASBR"]:
+                myFile.write(" neighbor "+neighbor["neighbor_address"]+" remote-as "+(neighbor["neighbor_as"])+"\n")
 
         #on active les voisins et on advertise les networks
         myFile.write(" !\n address-family ipv4\n exit-address-family\n !\n address-family ipv6\n")
@@ -77,13 +78,17 @@ for autonomous_system in data["AS"]:
                     if(interface["int_name"]=="Loopback0"):
                         ip=interface["plage_ip"]+i["nom_routeur"]+"::"+i["nom_routeur"]
                 myFile.write("  neighbor "+ip+" activate\n")
+                myFile.write("  neighbor "+ip+" send-community\n")
 
         #SI ASBR verifier avec R6 et R7 si ça marche
         if(routeur["ASBR"][0]["neighbor_as"]!=""):
-            neighbor = "  neighbor "+routeur["ASBR"][0]["neighbor_address"]+" activate\n"
-            myFile.write(neighbor)
-            for i in range(0,len(routeur["ASBR"][0]["network_advertisement"])):
-                network = "  network "+routeur["ASBR"][0]["network_advertisement"][i]+"\n"
+            for neighbor in routeur["ASBR"]:
+                neighborRR = "  neighbor "+neighbor["neighbor_address"]+" activate\n"
+                myFile.write(neighborRR)
+                neighborBis = "  neighbor "+neighbor["neighbor_address"]+" send-community\n"
+                myFile.write(neighborBis)
+            for i in range(0,len(neighbor["network_advertisement"])):
+                network = "  network "+neighbor["network_advertisement"][i]+"\n"
                 myFile.write(network)
             redistribute = "  redistribute "+protocole+" \n"
             myFile.write(redistribute)
