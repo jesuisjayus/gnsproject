@@ -1,0 +1,46 @@
+router bgp 65000
+  bgp log-neighbor-changes
+  neighbor 192.168.1.2 remote-as 65100
+  neighbor 192.168.1.2 route-map INBOUND in
+  neighbor 192.168.1.2 route-map OUTBOUND out
+  !
+  address-family ipv4
+    neighbor 192.168.1.2 activate
+    neighbor 192.168.1.2 send-community both
+  !
+  !
+  ip prefix-list CUSTOMER permit 10.0.0.0/8
+  ip prefix-list PEER permit 20.0.0.0/8
+  ip prefix-list PROVIDER permit 30.0.0.0/8
+  !
+  !
+  route-map INBOUND permit 10
+    match ip address prefix-list CUSTOMER
+    set community 65000:1
+  route-map INBOUND permit 20
+    match ip address prefix-list PEER
+    set community 65000:2
+  route-map INBOUND permit 30
+    match ip address prefix-list PROVIDER
+    set community 65000:3
+  !
+  route-map OUTBOUND permit 10
+    match community 65000:1
+    set local-preference 150
+  route-map OUTBOUND permit 20
+    match community 65000:2
+    set local-preference 100
+  route-map OUTBOUND permit 30
+    match community 65000:3
+    set local-preference 50
+  !
+  !
+  router ospfv3 1
+    log-adjacency-changes
+    redistribute bgp 65000
+    area 0
+      interface GigabitEthernet0/0
+        cost 100
+      !
+    !
+  !
