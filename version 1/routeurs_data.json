@@ -359,7 +359,7 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
@@ -377,13 +377,13 @@
                             "int_name":"GigabitEthernet3/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet4/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         }
                     ]                        
                 },
@@ -405,7 +405,7 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
@@ -429,7 +429,7 @@
                             "int_name":"GigabitEthernet4/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         }
                     ]    
                 },
@@ -451,7 +451,7 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
@@ -475,7 +475,7 @@
                             "int_name":"GigabitEthernet4/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         }
                     ] 
                 },
@@ -497,19 +497,19 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
                             "plage_ip":"2001:100:102:9::",
                             "masque": "/64",
-                            "cost":"2"
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
                             "plage_ip":"2001:100:102:4::",
                             "masque": "/64",
-                            "cost":"3"
+                            "cost":"default"
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
@@ -543,7 +543,7 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
@@ -595,7 +595,7 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
@@ -607,7 +607,7 @@
                             "int_name":"GigabitEthernet2/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet3/0",
@@ -647,13 +647,13 @@
                             "int_name":"FastEthernet0/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet1/0",
                             "plage_ip":"",
                             "masque": "",
-                            "cost":"default"
+                            "cost":""
                         },
                         {
                             "int_name":"GigabitEthernet2/0",
